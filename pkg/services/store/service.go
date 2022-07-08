@@ -167,7 +167,7 @@ type UploadRequest struct {
 
 func storageSupportsMutatingOperations(path string) bool {
 	// TODO: this is temporary - make it rbac-driven
-	return strings.HasPrefix(path, RootResources+"/") || path == RootResources
+	return strings.HasPrefix(path, RootResources+"/") || path == RootResources || path == RootSystem || strings.HasPrefix(path, RootSystem+"/")
 }
 
 func (s *standardStorageService) Upload(ctx context.Context, user *models.SignedInUser, req *UploadRequest) error {
