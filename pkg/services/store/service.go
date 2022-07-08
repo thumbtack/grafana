@@ -26,6 +26,9 @@ var ErrFileAlreadyExists = errors.New("file exists")
 
 const RootPublicStatic = "public-static"
 const RootResources = "resources"
+const RootSystem = "system"
+
+const SystemBrandingStorage = "system/branding"
 
 const MAX_UPLOAD_SIZE = 3 * 1024 * 1024 // 3MB
 
@@ -95,6 +98,13 @@ func ProvideService(sql *sqlstore.SQLStore, features featuremgmt.FeatureToggles,
 					setBuiltin(true).
 					setDescription("Upload custom resource files"))
 		}
+
+		storages = append(storages,
+			newSQLStorage(RootSystem,
+				"System",
+				&StorageSQLConfig{orgId: orgId},
+				sql,
+			).setBuiltin(true).setDescription("Grafana system storage"))
 
 		return storages
 	}
