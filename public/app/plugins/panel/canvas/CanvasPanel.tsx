@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { ReplaySubject, Subscription } from 'rxjs';
 
 import { GrafanaTheme, PanelProps } from '@grafana/data';
-import { config, locationService } from '@grafana/runtime/src';
+import { config, locationService } from '@grafana/runtime';
 import { Button, PanelContext, PanelContextRoot, stylesFactory } from '@grafana/ui';
 import { CanvasFrameOptions } from 'app/features/canvas';
 import { ElementState } from 'app/features/canvas/runtime/element';
