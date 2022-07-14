@@ -98,6 +98,7 @@ describe('PrometheusMetricFindQuery', () => {
         method: 'GET',
         url: `/api/datasources/1/resources/api/v1/label/resource/values?start=${raw.from.unix()}&end=${raw.to.unix()}`,
         hideFromInspector: true,
+        showErrorAlert: false,
         headers: {},
       });
     });
@@ -195,6 +196,7 @@ describe('PrometheusMetricFindQuery', () => {
         method: 'GET',
         url: `/api/datasources/1/resources/api/v1/label/__name__/values?start=${raw.from.unix()}&end=${raw.to.unix()}`,
         hideFromInspector: true,
+        showErrorAlert: false,
         headers: {},
       });
     });
